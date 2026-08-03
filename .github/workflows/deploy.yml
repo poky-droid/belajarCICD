@@ -10,14 +10,17 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Deploy
+      - uses: actions/checkout@v4
+
+      - name: Mark repository as safe
         run: |
           git config --global --add safe.directory /var/www/belajarCICD
 
+      - name: Deploy
+        run: |
           cd /var/www/belajarCICD
 
-          git fetch origin
-          git reset --hard origin/main
+          git pull origin main
 
           composer install --no-dev --optimize-autoloader
 
