@@ -116,7 +116,9 @@
 </header>
 
 <section class="hero">
-    <h1>Selamat Datang</h1>
+    <h1>Selamat Datang kalian 
+di MyWebsite!
+    </h1>
     <p>
         Ini adalah contoh website sederhana yang dibuat menggunakan HTML dan CSS.
         Cocok sebagai latihan dasar membuat landing page.
