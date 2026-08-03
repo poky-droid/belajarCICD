@@ -10,18 +10,17 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v4
-
       - name: Deploy
         run: |
+          git config --global --add safe.directory /var/www/belajarCICD
+
           cd /var/www/belajarCICD
 
-          git pull origin main
+          git fetch origin
+          git reset --hard origin/main
 
           composer install --no-dev --optimize-autoloader
 
           php artisan migrate --force
 
           php artisan optimize
-
-          
